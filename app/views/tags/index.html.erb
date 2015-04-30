@@ -1,0 +1,24 @@
+<h1>タグ一覧。そのうち階層化して表示</h1>
+
+<p><%= link_to 'タグ新規作成', new_tag_path %></p>
+
+<%- @tags.each do |tag| %>
+  <ul>
+    <li>
+	  <%= link_to tag.name, tag_path(tag) %>
+	  <%= link_to '編集する', edit_tag_path(tag) %>
+    </li>
+  </ul>
+
+<% end %>
+
+<%- Tag.top_keyword.each do |top_keyword| %>
+  
+  <%= top_keyword.name %>
+  
+  <%- Tag.second_keyword(top_keyword.name).each do |second_keyword| %>
+    <%= second_keyword.name %>
+
+  <% end %>
+  
+<% end %>

@@ -1,0 +1,24 @@
+<h1>新規タグ作成</h1>
+
+<%= form_for @tag, html: { class: 'form-horizontal' } do |f| %>
+
+  <%= f.label :name, class: 'control-label' %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :parent_name, class: 'control-label' %>
+  <%= f.text_field :parent_name, class: 'form-control' %>
+
+  <%= f.label :grantparent_name, class: 'control-label' %>
+  <%= f.text_field :grandparent_name, class: 'form-control' %>
+
+  <%= f.label :great_grandparent_name, class: 'control-label' %>
+  <%= f.text_field :great_grandparent_name, class: 'form-control' %>
+
+  <%= f.label :layer, class: 'control-label' %>
+  <%= f.text_field :layer, class: 'form-control' %>
+
+  <%= f.submit '保存する', class: 'brn btn-success' %>
+
+
+<% end %>
+

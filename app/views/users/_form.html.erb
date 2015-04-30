@@ -1,0 +1,54 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <%= form_for(@user, url: path, method: method) do |f| %>
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label class="control-label" for="">使用したユーザー名</label>
+                <%= f.text_field :name, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="col-sm-12">
+            <hr>
+            <b>お世話になったドライバー</b>
+            <div class="text-right">
+              <%= link_to_add_association 'ドライバーを追加', f, :histories,
+                class: 'btn btn-default',
+                data: {
+                  association_insertion_node: '#detail-association-insertion-point',
+                  association_insertion_method: 'append' }
+               %>
+            </div>
+
+            <table class="table table-list">
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody id='detail-association-insertion-point'>
+            <div class="form-group">
+            <%= f.fields_for :histories do |od| %>
+              <%= render 'histories_fields', f: od %>
+            <% end %>
+            </div>
+            </tbody>
+            </table>
+          </div>
+
+          <div class="col-sm-12">
+          <div class="text-center">
+          <%= f.submit '登録', class: 'btn btn-primary' %>
+          </div>
+          </div>
+        <% end %>
+
+      </div><!-- /col-sm-12 -->
+    </div><!-- /row -->
+  </div><!-- /panel-body -->
+</div><!-- /panel -->

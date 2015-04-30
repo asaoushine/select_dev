@@ -1,0 +1,17 @@
+<h1><%="#{@tag.name}" + "のshowページ" %></h1>
+
+<% if @tag.grandparent_name.present? %>
+  <p><%= @tag.grandparent_name %></p>
+<% end %>
+
+<% if @tag.parent_name.present? %>
+  <p><%= @tag.parent_name %></p>
+<% end %>
+
+
+<p><%= @tag.name %></p>
+
+
+<p><%= Tag.top_keyword %></p>
+<p><%= Tag.second_keyword(@tag.name) %></p>
+<p><%= Tag.third_keyword(@tag.name) %></p>

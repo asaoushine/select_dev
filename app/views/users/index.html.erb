@@ -1,0 +1,17 @@
+<h2>ユーザーリスト</h12>
+<%- @users.each do |user| %>
+  <div class="row">
+    <p><%= user.name %></p>
+  </div>
+  <% if user.drivers.any? %>
+    <%- user.drivers.each do |driver| %>
+      <p><%= driver.name %></p>
+      <p><%= debug driver %></p>
+    <% end%>
+  <% else %>
+    <p>ドライバーが存在しません</p>
+  <% end %>
+
+  <%= debug user %>
+<% end %>
+
