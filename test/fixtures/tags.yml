@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  great_grandparent_name: MyString
+  grandparent_name: MyString
+  parent_name: MyString
+  name: MyString
+  layer: 1
+  tag_image: MyString
+
+two:
+  great_grandparent_name: MyString
+  grandparent_name: MyString
+  parent_name: MyString
+  name: MyString
+  layer: 1
+  tag_image: MyString

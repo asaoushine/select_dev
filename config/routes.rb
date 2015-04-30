@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   resources :people
 
+  resources :users
+  resources :drivers
+
+  resources :tags
+
+  root 'tags#index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
