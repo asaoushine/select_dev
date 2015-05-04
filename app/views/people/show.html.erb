@@ -3,6 +3,14 @@
 <p>
   <strong>Name:</strong>
   <%= @person.name %>
+  <%= @person.person_keywords.each do |keyword|%>
+    <%= keyword %>
+  <% end %>
+  
+  <%= debug @person.person_keywords %>
+  
+
+
 </p>
 
 <%= link_to 'Edit', edit_person_path(@person) %> |

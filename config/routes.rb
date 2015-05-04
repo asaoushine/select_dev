@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :keywords
+
   resources :people
 
   resources :users

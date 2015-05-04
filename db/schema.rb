@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430024311) do
+ActiveRecord::Schema.define(version: 20150501111737) do
 
   create_table "drivers", force: true do |t|
     t.string   "name"
@@ -29,11 +29,27 @@ ActiveRecord::Schema.define(version: 20150430024311) do
   add_index "histories", ["driver_id"], name: "index_histories_on_driver_id", using: :btree
   add_index "histories", ["user_id"], name: "index_histories_on_user_id", using: :btree
 
+  create_table "keywords", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "people", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "person_keywords", force: true do |t|
+    t.integer  "person_id"
+    t.integer  "keyword_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "person_keywords", ["keyword_id"], name: "index_person_keywords_on_keyword_id", using: :btree
+  add_index "person_keywords", ["person_id"], name: "index_person_keywords_on_person_id", using: :btree
 
   create_table "tags", force: true do |t|
     t.string   "great_grandparent_name"
